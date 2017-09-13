@@ -34,7 +34,7 @@ if (diff == 1){
 }
 else if (diff == 2){
     randomNumber = rand() % 10 + 1;
-    for(trial = 1; trial <= 2; trial = trial + 1){ 
+    for(trial = 1; trial <= 2; trial++){ 
         std::cout << "Guess a number from 1 to 10." << std::endl;
         std::cin >> guess;
         if (guess == randomNumber){
@@ -48,7 +48,7 @@ else if (diff == 2){
 }
 else if (diff == 3){
     randomNumber = rand() % 100 + 1;
-    for(trial = 1; trial <= 3; trial = trial + 1){
+    for(trial = 1; trial <= 3; trial++){
         std::cout << "Guess a number from 1 to 100" << std::endl;
         std::cin >> guess;
         if (guess == randomNumber){
@@ -70,6 +70,17 @@ else if (diff == 4){
     }
     if (b < a){
         randomNumber = rand() % a + 1;
+        for(trial = 1; trial <= b; trial++){
+        std::cout << "Guess a number from 1 to " << a << std::endl;
+        std::cin >> guess;
+        if (guess == randomNumber){
+            std::cout << "Good Job!! You guessed right. The number was " << guess << std::endl;
+            trial = 3;
+        }
+        else{
+            std::cout << "Darn! You guessed wrong." << std::endl;
+        }
+        }
     }
 }
 else{
