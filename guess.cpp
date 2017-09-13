@@ -7,6 +7,8 @@ int main(){
 
 srand(time(NULL));    //Seed random number with the time of machine
 int playAgain;
+int a;
+int b;
 int diff;
 int randomNumber;
 int guess;
@@ -16,6 +18,7 @@ std::cout << "What difficulty would you like to play?" << std::endl;
 std::cout << "1) Easy [1-2] 1 guess" << std::endl;
 std::cout << "2) Medium [1-10] 2 guesses" << std::endl;
 std::cout << "3) Hard [1-100] 3 guesses" << std::endl;
+std::cout << "4) Custom [1-a] b guesses" << std::endl;
 std::cin >> diff;
 
 if (diff == 1){
@@ -55,6 +58,18 @@ else if (diff == 3){
         else{
             std::cout << "Darn! You guessed wrong." << std::endl;
         }
+    }
+}
+else if (diff == 4){
+    std::cout << "Enter your range then: ";
+    std::cin >> a;
+    std::cout << "Amount of guesses: ";
+    std::cin >> b;
+    if (b >= a){
+        std::cout << "You can't have more guesses than your range!" << std::endl;
+    }
+    if (b < a){
+        randomNumber = rand() % a + 1;
     }
 }
 else{
