@@ -41,8 +41,13 @@ else if (diff == 2){
             std::cout << "Good Job!! You guessed right. The number was " << guess << std::endl;
             trial = 2;
         }
-        else{
+        else if(guess < randomNumber){
             std::cout << "Darn! You guessed wrong." << std::endl;
+            std::cout << "GO HIGHER!" << std::endl;
+        }
+        else if(guess > randomNumber){
+            std::cout << "Darn! You guessed wrong." << std::endl;
+            std::cout << "GO LOWER!" << std::endl;
         }
     }
 }
@@ -55,13 +60,18 @@ else if (diff == 3){
             std::cout << "Good Job!! You guessed right. The number was " << guess << std::endl;
             trial = 3;
         }
-        else{
+        else if(guess < randomNumber){
             std::cout << "Darn! You guessed wrong." << std::endl;
+            std::cout << "GO HIGHER!" << std::endl;
+        }
+        else if(guess > randomNumber){
+            std::cout << "Darn! You guessed wrong." << std::endl;
+            std::cout << "GO LOWER!" << std::endl;
         }
     }
 }
 else if (diff == 4){
-    std::cout << "Enter your range then: ";
+    std::cout << "Enter your range: ";
     std::cin >> a;
     std::cout << "Amount of guesses: ";
     std::cin >> b;
@@ -75,11 +85,16 @@ else if (diff == 4){
         std::cin >> guess;
         if (guess == randomNumber){
             std::cout << "Good Job!! You guessed right. The number was " << guess << std::endl;
-            trial = 3;
+            trial = b;
         }
-        else{
+        else if(guess < randomNumber){
             std::cout << "Darn! You guessed wrong." << std::endl;
+            std::cout << "GO HIGHER!" << std::endl;
         }
+        else if(guess > randomNumber){
+            std::cout << "Darn! You guessed wrong." << std::endl;
+            std::cout << "GO LOWER!" << std::endl;
+        } 
         }
     }
 }
