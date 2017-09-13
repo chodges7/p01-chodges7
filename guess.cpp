@@ -6,10 +6,11 @@
 int main(){
 
 srand(time(NULL));    //Seed random number with the time of machine
+int playAgain;
 int diff;
 int randomNumber;
 int guess;
-
+do{ 
 std::cout << "What difficulty would you like to play?" << std::endl;
 std::cout << "1) Easy [1-2]" << std::endl;
 std::cout << "2) Medium [1-10]" << std::endl;
@@ -70,6 +71,11 @@ else if (diff == 4){
 else{
 std::cout << "Error: Difficulty not found" << std::endl;
 }
+std::cout << "Would you like to play again?" << std::endl;
+std::cout << "1) Yes" << std::endl << "2) No" << std::endl;
+std::cin >> playAgain;
+}
+while (playAgain == 1);
 }
 //randomNumber = rand() % 10 + 1
 
@@ -79,5 +85,3 @@ std::cout << "Error: Difficulty not found" << std::endl;
     Therefore, the "rand() % 10 + 1" line outputs a random
     number between 1 and 10.
 */
-
-
