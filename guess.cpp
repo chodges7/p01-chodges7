@@ -7,8 +7,8 @@ int main(){
 
 srand(time(NULL));    //Seed random number with the time of machine
 int playAgain;
-int a;
-int b;
+int range;
+int guesses;
 int diff;
 int randomNumber;
 int guess;
@@ -97,20 +97,20 @@ else if (diff == 3){
 }
 else if (diff == 4){
     std::cout << "Enter your range: ";
-    std::cin >> a;
+    std::cin >> range;
     std::cout << "Amount of guesses: ";
-    std::cin >> b;
-    if (b >= a){
+    std::cin >> guesses;
+    if (guesses >= range){
         std::cout << "You can't have more guesses than your range!" << std::endl;
     }
-    if (b < a){
-        randomNumber = rand() % a + 1;
-        for(trial = 1; trial < b; trial++){
-            std::cout << "Guess a number from 1 to " << a << std::endl;
+    if (guesses < range){
+        randomNumber = rand() % range + 1;
+        for(trial = 1; trial < guesses; trial++){
+            std::cout << "Guess a number from 1 to " << range << std::endl;
             std::cin >> guess;
             if (guess == randomNumber){
                 std::cout << "Good Job!! You guessed right." << std::endl;
-                trial = b;
+                trial = guesses;
             }
             else if(guess < randomNumber){
                 std::cout << "Darn! You guessed wrong." << std::endl;
@@ -122,8 +122,8 @@ else if (diff == 4){
             } 
         }
     }
-    if (trial == b){
-	std::cout << "Guess a number from 1 to " << a << std::endl;
+    if (trial == guesses){
+	std::cout << "Guess a number from 1 to " << range << std::endl;
         std::cin >> guess;
 	if(guess == randomNumber){
 		std::cout << "Good Job!! You guessed right." << std::endl;
