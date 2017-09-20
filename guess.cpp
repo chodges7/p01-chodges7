@@ -143,6 +143,7 @@ std::cout << "1) Yes" << std::endl << "2) No" << std::endl;
 std::cin >> playAgain;
 }
 while (playAgain == 1);
+return 0;
 }
 //The reason it's a do...while statement is so the program runs at least once
 // and then if the playAgain int is still 1 then the program runs again.
